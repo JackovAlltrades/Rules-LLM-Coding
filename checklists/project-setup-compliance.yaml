@@ -1,7 +1,124 @@
-# Placeholder for Project Setup Compliance Checklist (Post setup script)
----
-# - item: '.gitignore exists'
-#   checked: false
-# - item: 'Secrets management configured'
-#   checked: false
+checklist_name: Project Setup Compliance
+version: 0.1.0
+based_on_mlr_version: 1.0.7
+items:
+  # --- Version Control ---
+  - rule: "8.1.3"
+    area: "DevOps (Git)"
+    description: "Is there a comprehensive `.gitignore` file ignoring build artifacts, logs, secrets, IDE files?"
+    checked: false
+    notes: ""
+  - rule: "8.1.2"
+    area: "DevOps (Git)"
+    description: "Is a standard branching model (e.g., GitFlow, GitHub Flow) defined and understood?"
+    checked: false
+    notes: ""
 
+  # --- Configuration Management ---
+  - rule: "3.5.1"
+    area: "Config Mgmt"
+    description: "Is configuration externalized (e.g., using env vars, config files, config service)?"
+    checked: false
+    notes: ""
+  - rule: "3.5.2"
+    area: "Config Mgmt"
+    description: "Is there a clear mechanism for environment-specific configurations (dev, staging, prod)?"
+    checked: false
+    notes: ""
+
+  # --- Secrets Management ---
+  - rule: "2.7.1"
+    area: "Security (Secrets)"
+    description: "Are there NO secrets (API keys, passwords, certs) committed to version control?"
+    checked: false
+    notes: ""
+  - rule: "2.7.2"
+    area: "Security (Secrets)"
+    description: "Is a secure secrets management tool/approach in place (Vault, AWS SM, Azure KV, env vars from secure source)?"
+    checked: false
+    notes: ""
+
+  # --- Dependency Management ---
+  - rule: "2.6.1 / 8.2.4"
+    area: "Security (Deps)"
+    description: "Is dependency vulnerability scanning integrated (e.g., Dependabot, Snyk, Trivy in CI)?"
+    checked: false
+    notes: ""
+  - rule: "2.6.2"
+    area: "Security (Deps)"
+    description: "Is there a process for promptly updating vulnerable dependencies?"
+    checked: false
+    notes: ""
+
+  # --- CI/CD & Automation ---
+  - rule: "8.2.1"
+    area: "DevOps (CI/CD)"
+    description: "Is there an automated build process triggered on commits/PRs?"
+    checked: false
+    notes: ""
+  - rule: "8.2.2"
+    area: "DevOps (CI/CD)"
+    description: "Are automated tests (unit, integration) running as part of the CI pipeline?"
+    checked: false
+    notes: ""
+  - rule: "8.2.4"
+    area: "DevOps (CI/CD)"
+    description: "Is automated security scanning (SAST/DAST/Deps) integrated into the CI pipeline?"
+    checked: false
+    notes: ""
+  - rule: "3.1.1"
+    area: "DevOps (CI/CD)"
+    description: "Is automated code formatting/linting integrated into the CI pipeline or pre-commit hooks?"
+    checked: false
+    notes: ""
+  - rule: "8.2.3"
+    area: "DevOps (CI/CD)"
+    description: "Is there an automated deployment process (to staging/prod)?"
+    checked: false
+    notes: ""
+
+  # --- Infrastructure (If Applicable) ---
+  - rule: "8.3"
+    area: "DevOps (IaC)"
+    description: "Is infrastructure managed using Infrastructure as Code (Terraform, Pulumi, etc.) and version controlled?"
+    checked: false
+    notes: ""
+  - rule: "9.2.1"
+    area: "DevOps (Containers)"
+    description: "If using Docker, are Dockerfiles optimized (multi-stage builds, minimal layers, non-root user)?"
+    checked: false
+    notes: ""
+
+  # --- Monitoring & Logging ---
+  - rule: "8.4.1"
+    area: "DevOps (Monitoring)"
+    description: "Is basic application/system metrics collection configured?"
+    checked: false
+    notes: ""
+  - rule: "8.4.2"
+    area: "DevOps (Logging)"
+    description: "Is centralized logging configured for application and infrastructure logs?"
+    checked: false
+    notes: ""
+  - rule: "8.4.4"
+    area: "DevOps (Alerting)"
+    description: "Are basic alerts configured for critical failures or performance degradation?"
+    checked: false
+    notes: ""
+
+  # --- Documentation ---
+  - rule: "N/A (General)"
+    area: "Documentation"
+    description: "Is there a clear README explaining the project's purpose, setup, and how to run it?"
+    checked: false
+    notes: ""
+  - rule: "6.3.4"
+    area: "Documentation (API)"
+    description: "If providing APIs, is API documentation available and up-to-date (e.g., Swagger/OpenAPI)?"
+    checked: false
+    notes: ""
+  - rule: "3.2.3"
+    area: "Documentation (Code)"
+    description: "Is code documentation (docstrings, comments) sufficient for key modules/functions?"
+    checked: false
+    notes: ""

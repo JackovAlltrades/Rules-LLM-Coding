@@ -1,7 +1,152 @@
-# Placeholder for Code Review Checklist
----
-# Example structure:
-# - rule: 1.2.1
-#   checked: false
-#   notes: ''
+checklist_name: Standard Code Review
+version: 0.1.0
+based_on_mlr_version: 1.0.7
+items:
+  # --- Correctness & Logic ---
+  - rule: "N/A (General)"
+    area: "Functionality"
+    description: "Does the code fulfill the requirements/story/bugfix it intends to?"
+    checked: false
+    notes: ""
+  - rule: "N/A (General)"
+    area: "Functionality"
+    description: "Is the logic sound? Any obvious flaws or missing edge cases?"
+    checked: false
+    notes: ""
 
+  # --- Security ---
+  - rule: "2.1.1"
+    area: "Security (Input)"
+    description: "Is all external/untrusted input validated (type, length, format, range)?"
+    checked: false
+    notes: ""
+  - rule: "2.1.2"
+    area: "Security (Output)"
+    description: "Is output encoded correctly for its context (HTML, SQL, etc.)?"
+    checked: false
+    notes: ""
+  - rule: "2.2.4"
+    area: "Security (AuthZ)"
+    description: "Are authorization checks performed correctly for the operation?"
+    checked: false
+    notes: ""
+  - rule: "2.4"
+    area: "Security (Crypto/Data)"
+    description: "Is sensitive data handled correctly (encryption at rest/transit if needed, strong algorithms)?"
+    checked: false
+    notes: ""
+  - rule: "2.5.1"
+    area: "Security (Errors)"
+    description: "Does it avoid leaking sensitive details in user-facing errors?"
+    checked: false
+    notes: ""
+  - rule: "2.5.2 / 8.4.2"
+    area: "Security (Logging)"
+    description: "Are errors and significant events logged appropriately (server-side)?"
+    checked: false
+    notes: ""
+  - rule: "2.6.1"
+    area: "Security (Deps)"
+    description: "Were any new dependencies added? If so, are they vetted/scanned?"
+    checked: false
+    notes: ""
+  - rule: "2.7"
+    area: "Security (Secrets)"
+    description: "Does the code avoid hardcoded secrets/credentials?"
+    checked: false
+    notes: ""
+  - rule: "2.8"
+    area: "Security (API)"
+    description: "If modifying an API, are rate limiting, secure headers, appropriate methods used?"
+    checked: false
+    notes: ""
+
+  # --- Code Quality & Maintainability ---
+  - rule: "3.1.1"
+    area: "Code Quality (Style)"
+    description: "Does the code adhere to project style guides (formatting, linting)?"
+    checked: false
+    notes: ""
+  - rule: "3.1.2"
+    area: "Code Quality (Naming)"
+    description: "Are variable, function, and class names clear and meaningful?"
+    checked: false
+    notes: ""
+  - rule: "3.1.3 / 3.4"
+    area: "Code Quality (Structure)"
+    description: "Is the code well-structured (modules, functions)? Is it DRY? Does it follow SOLID principles where applicable?"
+    checked: false
+    notes: ""
+  - rule: "3.2.1"
+    area: "Code Quality (Comments)"
+    description: "Are comments used effectively to explain the 'why', not just the 'how'?"
+    checked: false
+    notes: ""
+  - rule: "3.2.3"
+    area: "Code Quality (Docs)"
+    description: "Is public API / complex function documentation (docstrings, etc.) clear and accurate?"
+    checked: false
+    notes: ""
+  - rule: "3.3"
+    area: "Code Quality (Error Handling)"
+    description: "Are errors handled gracefully? Are exceptions specific? Are they logged appropriately?"
+    checked: false
+    notes: ""
+  - rule: "3.5.1"
+    area: "Code Quality (Config)"
+    description: "Is configuration kept separate from code?"
+    checked: false
+    notes: ""
+
+  # --- Testing ---
+  - rule: "4.1"
+    area: "Testing"
+    description: "Are there adequate unit tests for the new/changed logic?"
+    checked: false
+    notes: ""
+  - rule: "4.1.3"
+    area: "Testing"
+    description: "Do tests cover typical usage, edge cases, and error conditions?"
+    checked: false
+    notes: ""
+  - rule: "4.2"
+    area: "Testing"
+    description: "Are integration tests needed/present/passing for interactions between components?"
+    checked: false
+    notes: ""
+
+  # --- Performance ---
+  - rule: "5.1 / 5.2 / 5.3"
+    area: "Performance"
+    description: "Any obvious performance concerns (inefficient algorithms, queries, loops)?"
+    checked: false
+    notes: ""
+  - rule: "5.6.1"
+    area: "Performance (Resource Mgmt)"
+    description: "Are resources reliably released (files, connections, locks)?"
+    checked: false
+    notes: ""
+  - rule: "5.4"
+    area: "Performance (Caching)"
+    description: "Should caching be considered/used for this operation?"
+    checked: false
+    notes: ""
+  - rule: "5.5"
+    area: "Performance (Async)"
+    description: "Should this operation be asynchronous / run in the background?"
+    checked: false
+    notes: ""
+
+  # --- Accessibility (If applicable) ---
+  - rule: "7.4"
+    area: "Accessibility (UI)"
+    description: "If UI code, does it meet basic accessibility standards (semantic HTML, keyboard nav, contrast, alt text)?"
+    checked: false
+    notes: ""
+
+  # --- LLM Usage (If applicable) ---
+  - rule: "1.5.3"
+    area: "LLM Usage"
+    description: "If LLM was significantly used, is this documented appropriately (e.g., in commit message, code comment)?"
+    checked: false
+    notes: ""
