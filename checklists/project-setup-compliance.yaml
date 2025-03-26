@@ -1,0 +1,7 @@
+# Placeholder for Project Setup Compliance Checklist (Post setup script)
+---
+# - item: '.gitignore exists'
+#   checked: false
+# - item: 'Secrets management configured'
+#   checked: false
+

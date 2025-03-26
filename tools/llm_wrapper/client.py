@@ -1,0 +1,1 @@
+$# Placeholder for LLM Client using LiteLLM\n# Example:\n# import litellm\n# def call_llm(prompt):\n#     response = litellm.completion(model="gpt-4", messages=[{"role": "user", "content": prompt}])\n#     return response

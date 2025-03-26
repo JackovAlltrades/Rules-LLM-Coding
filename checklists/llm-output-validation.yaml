@@ -1,0 +1,7 @@
+# Placeholder for LLM Output Validation Checklist
+---
+# Focus on rules from section 1.2
+# - rule: 1.2.3 # Security
+#   checked: false
+#   notes: 'Check for injection flaws'
+
