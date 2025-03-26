@@ -40,3 +40,23 @@ There are several ways you can contribute:
 All contributors are expected to adhere to the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). *(Note: You'll need to create this separate file later if you want one)*. Please be respectful and constructive in all interactions.
 
 *(Optional: Add sections on Style Guides if scripts/tools become complex)*
+## Documentation File Naming Convention
+
+When creating new significant documentation files or rule documents within this repository (especially in the `docs/` or `rules/` directories), please follow this naming convention to help with organization and versioning:
+
+`NNN-[category]-[short-description][-vX].md`
+
+Where:
+- `NNN`: A three-digit sequential number (e.g., `001-`, `002-`). Find the next available number.
+- `[category]`: A short code indicating the type of document:
+    - `arch`: Architecture or high-level design documents.
+    - `rule`: Specific rule sets or detailed guidelines (primarily under `rules/`).
+    - `doc`: General documentation or explanatory files (primarily under `docs/`).
+    - `plan`: Planning documents (roadmaps, etc.).
+    - `script`: Documentation related to scripts in `scripts/`.
+    - `tpl`: Documentation related to templates in `templates/`.
+- `[short-description]`: A brief, hyphenated description of the file's content.
+- `[-vX]`: (Optional) A version suffix like `-v2`, `-v3` if this is a significant revision replacing an older document.
+
+**Examples:**
+
