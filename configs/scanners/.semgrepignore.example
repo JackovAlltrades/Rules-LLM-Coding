@@ -1,0 +1,20 @@
+# Example .semgrepignore file
+# --- RENAME this file to '.semgrepignore' in your project root ---
+# Syntax is similar to .gitignore
+
+# Ignore test directories (often less critical or have intentional "bad" patterns)
+tests/
+test/
+fixtures/
+
+# Ignore specific files
+**/legacy_code_to_ignore.py
+
+# Ignore vendor/third-party libraries checked into the repo (scan dependencies separately!)
+vendor/
+node_modules/
+.venv/
+
+# Ignore build artifacts
+dist/
+build/

@@ -1,0 +1,60 @@
+# Example pyproject.toml sections for Black and Flake8/Ruff
+# --- MERGE these sections into your existing pyproject.toml file ---
+
+# [build-system] # (Your existing build system section)
+# requires = ["setuptools>=61.0"]
+# build-backend = "setuptools.build_meta"
+
+# [project] # (Your existing project metadata section)
+# name = "my_project"
+# version = "0.1.0"
+# ...
+
+# --- Black Configuration (Code Formatter) ---
+[tool.black]
+line-length = 88
+target-version = ['py39', 'py310', 'py311'] # Specify supported Python versions
+# include = '\.pyi?$'
+# exclude = '''
+# /(
+#    \.git
+#  | \.hg
+#  | \.mypy_cache
+#  | \.tox
+#  | \.venv
+#  | _build
+#  | buck-out
+#  | build
+#  | dist
+# )/
+# '''
+
+# --- Ruff Configuration (Linter - often replaces Flake8, isort, etc.) ---
+# Ruff is very fast and integrates many checks. Recommended.
+[tool.ruff]
+line-length = 88
+target-version = "py39" # Minimum supported Python version
+
+# Select rule sets to enable (see Ruff docs for all codes)
+# E = pycodestyle errors, F = pyflakes, W = pycodestyle warnings,
+# I = isort (import sorting), N = pep8-naming, TID = flake8-tidy-imports
+# Add others like B (flake8-bugbear), C4 (flake8-comprehensions), SIM (flake8-simplify)
+select = ["E", "F", "W", "I", "N", "TID"]
+
+# Optionally ignore specific rules
+# ignore = ["E501"] # Example: Ignore line too long (if Black handles it)
+
+# Configure specific plugins if needed
+# [tool.ruff.isort]
+# known-first-party = ["my_project"] # Help isort classify your project's modules
+
+# --- Flake8 Configuration (Alternative/Legacy Linter) ---
+# Only needed if you are NOT using Ruff
+# [tool.flake8]
+# max-line-length = 88
+# extend-ignore = ["E203", "E501"] # Example: Ignore whitespace before ':' and line length (if Black handles)
+# exclude = [".git", "__pycache__", ".venv"]
+# Per-file-ignores can be useful
+# per-file-ignores =
+#    "__init__.py:F401" # Ignore unused imports in __init__.py
+

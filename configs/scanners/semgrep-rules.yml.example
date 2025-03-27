@@ -1,0 +1,34 @@
+# Example Semgrep Configuration File
+# --- RENAME this file to '.semgrep.yml' or similar in your project root ---
+# This config typically just points to pre-defined rulesets.
+
+# Rule sources:
+# - Registry: Public rules maintained by Semgrep and the community.
+# - Local files: Custom rules written by you (e.g., 'my-custom-rules.yml').
+# - Git URLs: Rules stored in other Git repositories.
+
+rules:
+  # --- Recommended starting points ---
+
+  # Semgrep's curated list of high-confidence, high-impact rules across languages.
+  - p/default
+
+  # OWASP Top 10 related rules (might overlap with default, but good for coverage)
+  # Find specific packs for your language (e.g., p/python, p/javascript)
+  # Example: For Python
+  # - p/python.lang.security.audit.* # Broader security rules for Python
+  # - p/owasp-top-ten # General OWASP rules
+
+  # Example: For JavaScript/TypeScript
+  # - p/javascript.lang.security.*
+  # - p/typescript.lang.security.*
+  # - p/owasp-top-ten
+
+  # Example: For Go
+  # - p/go.lang.security.*
+  # - p/owasp-top-ten
+
+  # Find more rulesets on the Semgrep Registry: https://semgrep.dev/explore
+
+  # Add custom local rules if needed:
+  # - path/to/your/custom-rules.yml

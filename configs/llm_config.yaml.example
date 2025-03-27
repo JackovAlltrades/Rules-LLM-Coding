@@ -1,0 +1,37 @@
+# Example Configuration for LLM Wrapper Tool (e.g., using LiteLLM)
+# --- RENAME this file to 'llm_config.yaml' in your project root or config dir ---
+
+# General settings for the wrapper tool itself
+tool_settings:
+  log_level: INFO # DEBUG, INFO, WARNING, ERROR
+  max_retries: 2
+  default_model: "primary_openai" # Reference a model defined below
+
+# LiteLLM specific settings (Optional - See LiteLLM docs)
+# litellm_settings:
+#   set_verbose: False
+#   # If using Azure for Fallbacks or Routing:
+#   azure_ad_token: os.environ/AZURE_AD_TOKEN # Example using env var
+
+# Define the available LLM models/endpoints
+# Keys ("primary_openai", "azure_alternative") are internal names used by the wrapper.
+model_list:
+  - model_name: primary_openai        # Internal name for your script
+    litellm_params:                   # Parameters passed directly to litellm.completion
+      model: "gpt-4o"                 # Actual model name LiteLLM understands
+      api_key: os.environ/OPENAI_API_KEY # Get key from ENV VAR
+      # Optional: Add other params like temperature, max_tokens, etc.
+      # temperature: 0.7
+
+  - model_name: azure_alternative     # Another model option
+    litellm_params:
+      model: "azure/your-deployment-name" # Format for Azure OpenAI via LiteLLM
+      api_key: os.environ/AZURE_API_KEY
+      api_base: os.environ/AZURE_API_BASE
+      api_version: os.environ/AZURE_API_VERSION
+
+  - model_name: local_ollama_model   # Example for a local model via Ollama/LiteLLM
+    litellm_params:
+      model: "ollama/llama3"          # LiteLLM format for Ollama
+      api_base: "http://localhost:11434" # Default Ollama endpoint
+
