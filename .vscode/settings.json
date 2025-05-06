@@ -1,0 +1,62 @@
+
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // General purpose, works well for md
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint", // Specific Markdown formatter/linter
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter", // Or ruff, etc.
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit" // Consider using Ruff for this
+    }
+  },
+  "files.eol": "\n", // Ensure LF line endings
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/__pycache__": true,
+    "**/.venv": true,
+    "**/venv": true
+  },
+  "workbench.editor.untitled.hint": "hidden",
+  "python.analysis.typeCheckingMode": "basic", // Or "strict"
+  "python.linting.enabled": true, // General Python linting
+  "python.linting.pylintEnabled": false, // Example: disable pylint if using ruff/flake8
+  "python.linting.flake8Enabled": true, // Example: enable flake8
+   // Consider adding Ruff settings if using ruff
+  // "ruff.lint.args": [],
+  // "ruff.format.args": [],
+  // "[python]": {
+  //   "editor.defaultFormatter": "charliermarsh.ruff",
+  //   "editor.codeActionsOnSave": {
+  //      "source.fixAll": true,
+  //      "source.organizeImports": true
+  //   }
+  // },
+
+  // Recommendations tie into settings
+  "recommendations": [
+    "ms-python.python",
+    "ms-python.vscode-pylance", // Language server
+    "ms-python.black-formatter", // Formatter
+    "ms-python.flake8", // Linter (or use Ruff)
+    // "charliermarsh.ruff", // Alternative Linter/Formatter
+    "DavidAnson.vscode-markdownlint", // Markdown linting
+    "yzhang.markdown-all-in-one", // Markdown utilities
+    "bierner.markdown-preview-github-styles", // Preview
+    "esbenp.prettier-vscode", // General formatter
+    "gitHub.vscode-pull-request-github", // GitHub integration
+    "eamodio.gitlens" // Git supercharger
+  ]
+}

@@ -1,0 +1,26 @@
+
+# Set default behavior for all files
+* text=auto eol=lf
+
+# Explicitly declare text files you want to always normalize and convert to LF
+*.txt text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.jsonc text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.sh text eol=lf
+*.gitignore text eol=lf
+*.gitattributes text eol=lf
+
+# Declare files that will always have LF line endings on checkout
+*.sh eol=lf
+
+# Denote all files that are truly binary and should not be modified
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary

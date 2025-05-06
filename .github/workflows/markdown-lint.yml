@@ -1,0 +1,33 @@
+
+name: Lint Markdown Files
+
+on:
+  push:
+    branches:
+      - main
+      - develop # Check pushes to develop
+  pull_request:
+    branches:
+      - main
+      - develop # Check PRs targeting main or develop
+
+jobs:
+  markdownlint:
+    name: Run Markdownlint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Use a current LTS version
+
+      - name: Install markdownlint-cli
+        run: npm install -g markdownlint-cli # Install globally in the runner
+
+      - name: Run linter on Guide Chapters and Docs
+        # Check all .md files in rules/ and docs/ directories
+        # Use glob pattern. ** matches directories recursively.
+        run: markdownlint --config .markdownlint.jsonc "rules/**/*.md" "docs/**/*.md"
